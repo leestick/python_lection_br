@@ -1,0 +1,21 @@
+
+SET HTTPS_PROXY=http://dmitryh:25GektHfcxGeib25GektHfcxGeib@cache.comita.lan:3128
+pip install ipython
+
+Виртуальное окружение(чтобы библиотеки разных версий не конфликтовали- для каждого проекта совое окружение):
+pip install virtualenv
+Заходим в папку проекта
+virtualenv env
+env\Scripts\activate
+pip install selenium
+pip install pytest
+PyCharm: File-Settings-Project-Interprer, choose new python.exe
+		 File-Settings-Tools-Python Integrated Tools-Default test renner-py.test
+
+
+--Импорт модулей, функций----------------------
+from math import sin as sinus
+
+Кортежи - последовательности констант. Нельзя менять элементы
+a = (1,2,[10,20,30],sin(5))
+Можно обращаться: a[2], отсчет с нуля
