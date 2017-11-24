@@ -2,9 +2,10 @@
 """from selenium.webdriver.firefox.webdriver import WebDriver
 """
 from selenium import webdriver
-WebDriver = webdriver.Ie("c:\\2306\Python\\IEDriverServer.exe")
 import unittest
+driver = webdriver.Ie("c:\\2306\Python\\IEDriverServer.exe")
 from group import Group
+
 
 def is_alert_present(wd):
     try:
@@ -13,9 +14,10 @@ def is_alert_present(wd):
     except:
         return False
 
+
 class Group_Add_unittest(unittest.TestCase):
     def setUp(self):
-        self.wd = WebDriver()
+        self.wd = driver
         self.wd.implicitly_wait(60)
 
     def open_home_page(self, wd):
@@ -63,7 +65,7 @@ class Group_Add_unittest(unittest.TestCase):
     def test_Group_Add(self):
         wd = self.wd
         self.open_home_page(wd)
-        self.login(wd, username = "admin", password = "secret")
+        self.login(wd, username="admin", password="secret")
         self.open_group_page(wd)
         self.create_group(wd, Group(name="Group1", header="Header1", footer="Footer1"))
         self.return_to_groups_page(wd)
@@ -72,7 +74,7 @@ class Group_Add_unittest(unittest.TestCase):
     def test_Empty_Group_Add(self):
         wd = self.wd
         self.open_home_page(wd)
-        self.login(wd, username = "admin", password = "secret")
+        self.login(wd, username="admin", password="secret")
         self.open_group_page(wd)
         self.create_group(wd, Group(name="", header="", footer=""))
         self.return_to_groups_page(wd)
