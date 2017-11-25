@@ -5,7 +5,7 @@
   "steps": [
     {
       "type": "get",
-      "url": "http://127.0.01/addressbook/"
+      "url": "http://localhost/addressbook/"
     },
     {
       "type": "setElementText",
